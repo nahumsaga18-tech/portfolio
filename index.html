@@ -5,12 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Nahum Jacob Ilagan</title>
     <style>
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body { 
             margin: 0; 
             font-family: Arial, sans-serif; 
             background: #0f172a; 
             color: #e2e8f0; 
-            line-height: 1.6; 
+            line-height: 1.6;
+            /* Applying the smooth transition on page load */
+            animation: fadeIn 0.8s ease-out;
         }
 
         header { 
@@ -33,11 +45,14 @@
             color: #e2e8f0; 
             margin: 0 15px; 
             text-decoration: none; 
-            font-weight: bold; 
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
         }
 
         nav a:hover { 
             color: #38bdf8; 
+            transform: scale(1.1); /* Subtle grow effect on click/hover */
         }
 
         section { 
@@ -52,18 +67,22 @@
             padding-bottom: 10px; 
         }
 
-        /* Increased size for the profile image */
         .profile-img {
-            width: 220px; /* Increased from 150px */
-            height: 220px; /* Increased from 150px */
+            width: 220px; 
+            height: 220px; 
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #38bdf8; /* Slightly thicker border for the larger size */
+            border: 4px solid #38bdf8; 
             margin-bottom: 30px;
             display: block;
             margin-left: auto;
             margin-right: auto;
             box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            transition: transform 0.5s ease;
+        }
+
+        .profile-img:hover {
+            transform: rotate(3deg) scale(1.05); /* Smooth tilt on hover */
         }
 
         .about-text {
