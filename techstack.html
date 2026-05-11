@@ -4,56 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Stack | Nahum Jacob Ilagan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
     <style>
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        body { margin: 0; font-family: Arial, sans-serif; background: #043564; color: #e2e8f0; }
+        
+        body { margin: 0; font-family: Arial, sans-serif; background: #043564; color: #e2e8f0; min-height: 100vh; }
         #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-        header { background: rgba(30, 41, 59, 0.9); padding: 15px; text-align: center; }
-        header h1 { font-size: 1.2rem; color: #38bdf8; text-transform: none; }
-        nav a { color: #e2e8f0; margin: 0 10px; text-decoration: none; font-weight: bold; font-size: 0.85rem; }
-        section { padding: 40px 20px; max-width: 900px; margin: auto; animation: fadeIn 0.8s ease; }
-        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .tech-card { background: rgba(15, 23, 42, 0.8); padding: 25px; border-radius: 12px; border: 1px solid rgba(56, 189, 248, 0.2); backdrop-filter: blur(8px); }
-        .tech-list { list-style: none; padding: 0; }
-        .tech-list li { padding: 10px 0; display: flex; align-items: center; gap: 12px; }
-        .tech-list i { color: #38bdf8; width: 25px; text-align: center; }
-        footer { padding: 20px; }
+        
+        header { background: rgba(30, 41, 59, 0.9) !important; backdrop-filter: blur(10px); }
+        .navbar-item { color: #e2e8f0 !important; font-weight: bold; font-size: 0.85rem; }
+        .navbar-item:hover, .navbar-item.is-active { color: #38bdf8 !important; background: transparent !important; }
+        
+        section { animation: fadeIn 0.8s ease; }
+
+        .tech-box { 
+            background: rgba(15, 23, 42, 0.8) !important; 
+            border: 1px solid rgba(56, 189, 248, 0.2); 
+            backdrop-filter: blur(8px);
+            color: #e2e8f0 !important;
+            transition: transform 0.3s ease;
+        }
+        .tech-box:hover { transform: translateY(-5px); }
+        
+        .tech-title { color: #38bdf8 !important; font-weight: bold; border-bottom: 2px solid rgba(56, 189, 248, 0.2); padding-bottom: 10px; margin-bottom: 20px; }
+        .icon { color: #38bdf8; margin-right: 10px; }
+        .title { color: #38bdf8 !important; }
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
-    <header>
-        <h1>Nahum Jacob Ilagan</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="techstack.html" class="active">Tech Stack</a>
-            <a href="achievements.html">Achievements</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-    <section>
-        <div class="tech-grid">
-            <div class="tech-card">
-                <h3>Languages</h3>
-                <ul class="tech-list">
-                    <li><i class="fab fa-java"></i> Java</li>
-                    <li><i class="fab fa-python"></i> Python</li>
-                    <li><i class="fas fa-database"></i> SQL (PostgreSQL)</li>
-                </ul>
+
+    <nav class="navbar is-transparent">
+        <div class="container">
+            <div class="navbar-brand">
+                <span class="navbar-item"><h1 class="title is-5">Nahum Jacob Ilagan</h1></span>
             </div>
-            <div class="tech-card">
-                <h3>Tools</h3>
-                <ul class="tech-list">
-                    <li><i class="fab fa-github"></i> Git & GitHub</li>
-                    <li><i class="fas fa-mobile-alt"></i> Android Studio</li>
-                    <li><i class="fas fa-code"></i> VS Code & pgAdmin</li>
-                </ul>
+            <div class="navbar-menu is-active has-text-centered">
+                <div class="navbar-end">
+                    <a href="index.html" class="navbar-item">Home</a>
+                    <a href="about.html" class="navbar-item">About</a>
+                    <a href="techstack.html" class="navbar-item is-active">Tech Stack</a>
+                    <a href="achievements.html" class="navbar-item">Achievements</a>
+                    <a href="contact.html" class="navbar-item">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-10-desktop">
+                    <div class="columns is-multiline">
+                        
+                        <div class="column is-6">
+                            <div class="box tech-box">
+                                <h3 class="is-size-4 tech-title">Languages</h3>
+                                <div class="content">
+                                    <div class="is-flex is-align-items-center mb-3">
+                                        <span class="icon is-medium"><i class="fab fa-java fa-lg"></i></span>
+                                        <span>Java</span>
+                                    </div>
+                                    <div class="is-flex is-align-items-center mb-3">
+                                        <span class="icon is-medium"><i class="fab fa-python fa-lg"></i></span>
+                                        <span>Python</span>
+                                    </div>
+                                    <div class="is-flex is-align-items-center mb-3">
+                                        <span class="icon is-medium"><i class="fas fa-file-code fa-lg"></i></span>
+                                        <span>C Programming Language</span>
+                                    </div>
+                                    <div class="is-flex is-align-items-center">
+                                        <span class="icon is-medium"><i class="fas fa-database fa-lg"></i></span>
+                                        <span>SQL (PostgreSQL)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column is-6">
+                            <div class="box tech-box">
+                                <h3 class="is-size-4 tech-title">Tools</h3>
+                                <div class="content">
+                                    <div class="is-flex is-align-items-center mb-3">
+                                        <span class="icon is-medium"><i class="fab fa-github fa-lg"></i></span>
+                                        <span>Git & GitHub</span>
+                                    </div>
+                                    <div class="is-flex is-align-items-center mb-3">
+                                        <span class="icon is-medium"><i class="fas fa-mobile-alt fa-lg"></i></span>
+                                        <span>Android Studio</span>
+                                    </div>
+                                    <div class="is-flex is-align-items-center">
+                                        <span class="icon is-medium"><i class="fas fa-code fa-lg"></i></span>
+                                        <span>VS Code & pgAdmin</span>
+                                    </div>
+                                    <span class="icon is-medium"><i class="fas fa-code fa-lg"></i></span>
+                                    <span>Codechum</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <footer></footer>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS("particles-js", {
