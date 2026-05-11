@@ -9,12 +9,17 @@
     <style>
         @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
         
-        body { margin: 0; font-family: Arial, sans-serif; background: #043564; color: #e2e8f0; min-height: 100vh; }
+        body { margin: 0; font-family: Arial, sans-serif; background: #043564; color: #e2e8f0; min-height: 100vh; overflow-x: hidden; }
         #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
         
-        /* Navbar styling to match your theme */
+        /* Navbar styling */
         header { background: rgba(30, 41, 59, 0.9) !important; backdrop-filter: blur(10px); }
         .navbar-item, .navbar-link { color: #e2e8f0 !important; font-weight: bold; font-size: 0.85rem; }
+        
+        /* Mobile menu adjustment */
+        .navbar-menu { background: rgba(30, 41, 59, 0.95) !important; }
+        .navbar-burger { color: #38bdf8 !important; }
+        
         .navbar-item:hover, .navbar-item.is-active { color: #38bdf8 !important; background: transparent !important; }
         
         /* Custom Card styling */
@@ -44,8 +49,15 @@
                 <span class="navbar-item">
                     <h1 class="title is-5">Nahum Jacob Ilagan</h1>
                 </span>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
             </div>
-            <div class="navbar-menu is-active has-text-centered">
+            
+            <div id="navMenu" class="navbar-menu has-text-centered">
                 <div class="navbar-end">
                     <a href="index.html" class="navbar-item">Home</a>
                     <a href="about.html" class="navbar-item">About</a>
@@ -101,8 +113,23 @@
         <button class="modal-close is-large" aria-label="close" onclick="closeModal()"></button>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
+        // Navbar Toggle Script
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+
+        // Modal Functions
         function zoomImage(src, link) { 
             document.getElementById("imageModal").classList.add("is-active"); 
             document.getElementById("expandedImg").src = src; 
@@ -111,7 +138,10 @@
         function closeModal() { 
             document.getElementById("imageModal").classList.remove("is-active"); 
         }
+    </script>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
         particlesJS("particles-js", { "particles": { "number": { "value": 10 }, "shape": { "type": "image", "image": { "src": "https://upload.wikimedia.org/wikipedia/en/e/ed/Nyan_cat_250px_frame.PNG", "width": 100, "height": 100 } }, "size": { "value": 40, "random": true }, "move": { "enable": true, "speed": 4, "direction": "right", "straight": true, "out_mode": "out" } } });
     </script>
 </body>
