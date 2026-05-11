@@ -15,6 +15,10 @@
         
         header { background: rgba(30, 41, 59, 0.85) !important; backdrop-filter: blur(10px); border: none; }
         .navbar-item, .navbar-link { color: #e2e8f0 !important; font-weight: bold; font-size: 0.85rem; }
+        
+        /* Mobile adjustment for burger menu appearance */
+        .navbar-menu { background: rgba(30, 41, 59, 0.95) !important; }
+        
         .navbar-item:hover, .navbar-item.is-active { color: #38bdf8 !important; background: transparent !important; }
         
         .hero { background: transparent !important; animation: fadeIn 1s ease-out; }
@@ -32,6 +36,9 @@
         /* Custom Button Hover */
         .custom-btn { transition: 0.3s ease; border-color: #38bdf8 !important; color: #38bdf8 !important; }
         .custom-btn:hover { background-color: #38bdf8 !important; color: #043564 !important; }
+
+        /* Burger icon color */
+        .navbar-burger { color: #38bdf8 !important; }
     </style>
 </head>
 <body>
@@ -43,9 +50,15 @@
                 <span class="navbar-item">
                     <h1 class="title is-5">Nahum Jacob Ilagan</h1>
                 </span>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
             </div>
 
-            <div class="navbar-menu is-active has-text-centered">
+            <div id="navMenu" class="navbar-menu has-text-centered">
                 <div class="navbar-end">
                     <a href="index.html" class="navbar-item is-active">Home</a>
                     <a href="about.html" class="navbar-item">About</a>
@@ -94,6 +107,22 @@
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
+        // Navbar Toggle Script
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+
+        // Particles Script
         particlesJS("particles-js", {
             "particles": {
                 "number": { "value": 10, "density": { "enable": true, "value_area": 800 } },
