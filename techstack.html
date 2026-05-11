@@ -12,6 +12,10 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body { 
             margin: 0; 
             font-family: Arial, sans-serif; 
@@ -21,8 +25,19 @@
             animation: fadeIn 0.8s ease-out;
         }
 
+        /* --- PARTICLES BACKGROUND CSS --- */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; 
+            background-color: #043564; /* Nyan Cat Blue */
+        }
+
         header { 
-            background: #1e293b; 
+            background: rgba(30, 41, 59, 0.85); 
             padding: 40px 20px; 
             text-align: center; 
         }
@@ -50,6 +65,7 @@
             padding: 60px 20px; 
             max-width: 900px; 
             margin: auto; 
+            position: relative;
         }
 
         h2 { 
@@ -66,17 +82,19 @@
         }
 
         .tech-card {
-            background: #1e293b;
+            background: rgba(30, 41, 59, 0.8); /* Semi-transparent */
             padding: 25px;
             border-radius: 12px;
             border: 1px solid #334155;
             transition: border-color 0.3s ease, transform 0.3s ease;
             text-align: left;
+            backdrop-filter: blur(5px); /* Frosted glass effect */
         }
 
         .tech-card:hover {
             border-color: #38bdf8;
             transform: translateY(-5px);
+            background: rgba(30, 41, 59, 0.95);
         }
 
         .tech-card h3 {
@@ -97,13 +115,13 @@
             padding: 10px 0;
             display: flex;
             align-items: center;
-            gap: 12px; /* Space between icon and text */
+            gap: 12px; 
         }
 
         .tech-list i {
             color: #38bdf8;
             font-size: 1.2em;
-            width: 25px; /* Keeps icons aligned */
+            width: 25px; 
             text-align: center;
         }
 
@@ -117,6 +135,8 @@
     </style>
 </head>
 <body>
+
+<div id="particles-js"></div>
 
 <header>
     <h1>Nahum Jacob Ilagan</h1>
@@ -167,6 +187,13 @@
 <footer>
     <p>© 2026 Nahum Jacob Ilagan. All rights reserved.</p>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    particlesJS.load('particles-js', 'particles.json', function() {
+        console.log('Nyan Cat particles loaded on Tech Stack page!');
+    });
+</script>
 
 </body>
 </html>

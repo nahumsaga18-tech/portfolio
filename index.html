@@ -21,12 +21,22 @@
             background: #0f172a; 
             color: #e2e8f0; 
             line-height: 1.6;
-            /* Applying the smooth transition on page load */
             animation: fadeIn 0.8s ease-out;
         }
 
+        /* --- PARTICLES BACKGROUND CSS --- */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Keeps cats behind your text */
+            background-color: #043564; /* Nyan Cat Blue */
+        }
+
         header { 
-            background: #1e293b; 
+            background: rgba(30, 41, 59, 0.8); /* Added transparency to see particles */
             padding: 40px 20px; 
             text-align: center; 
         }
@@ -52,10 +62,9 @@
 
         nav a:hover { 
             color: #38bdf8; 
-            transform: scale(1.1); /* Subtle grow effect on click/hover */
+            transform: scale(1.1); 
         }
 
-        /* Active page styling */
         .active {
             color: #38bdf8;
         }
@@ -64,6 +73,7 @@
             padding: 60px 20px; 
             max-width: 900px; 
             margin: auto; 
+            position: relative; /* Ensures text stays on top */
         }
 
         h2 { 
@@ -87,12 +97,15 @@
         }
 
         .profile-img:hover {
-            transform: rotate(3deg) scale(1.05); /* Smooth tilt on hover */
+            transform: rotate(3deg) scale(1.05);
         }
 
         .about-text {
             text-align: justify;
             font-size: 1.1em;
+            background: rgba(15, 23, 42, 0.7); /* Slight dark background to make text readable */
+            padding: 20px;
+            border-radius: 10px;
         }
 
         footer { 
@@ -106,33 +119,42 @@
 </head>
 <body>
 
-<header>
-    <h1>Nahum Jacob Ilagan</h1>
-    <p>Web Developer | Designer | Student</p>
-    <nav>
-        <a href="index.html" class="active">About</a>
-        <a href="techstack.html">Tech Stack</a> <a href="achievements.html">Achievements</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+    <div id="particles-js"></div>
 
-<section id="about">
-    <h2>About Me</h2>
-    <img src="profile.jpg" alt="Nahum Jacob Ilagan" class="profile-img">
-    <div class="about-text">
-        <p>
-            Hello! I'm Nahum Jacob Ilagan, a passionate developer who enjoys creating clean and functional websites that prioritize user experience. 
-            I have developed a strong foundation in software development through academic projects involving Java, Python, and Android Studio. 
-            My technical interests extend to database systems and SQL management, where I focus on building efficient back-end structures using tools like PostgreSQL. 
-            I am particularly drawn to minimalist and clean UI designs, as I believe simplicity is key to effective digital communication. 
-            Constantly seeking to grow, I am currently refining my professional workflow by mastering version control with Git and GitHub.
-        </p>
-    </div>
-</section>
+    <header>
+        <h1>Nahum Jacob Ilagan</h1>
+        <p>Web Developer | Designer | Student</p>
+        <nav>
+            <a href="index.html" class="active">About</a>
+            <a href="techstack.html">Tech Stack</a> 
+            <a href="achievements.html">Achievements</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-<footer>
-    <p>© 2026 Nahum Jacob Ilagan. All rights reserved.</p>
-</footer>
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="profile.jpg" alt="Nahum Jacob Ilagan" class="profile-img">
+        <div class="about-text">
+            <p>
+                Hello! I'm Nahum Jacob Ilagan, a passionate developer who enjoys creating clean and functional websites that prioritize user experience. 
+                I have developed a strong foundation in software development through academic projects involving Java, Python, and Android Studio. 
+                My technical interests extend to database systems and SQL management, where I focus on building efficient back-end structures using tools like PostgreSQL. 
+                I am particularly drawn to minimalist and clean UI designs, as I believe simplicity is key to effective digital communication. 
+                Constantly seeking to grow, I am currently refining my professional workflow by mastering version control with Git and GitHub.
+            </p>
+        </div>
+    </section>
 
+    <footer>
+        <p>© 2026 Nahum Jacob Ilagan. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('Nyan Cat particles loaded!');
+        });
+    </script>
 </body>
 </html>

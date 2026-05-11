@@ -21,11 +21,25 @@
             background: #0f172a; 
             color: #e2e8f0; 
             line-height: 1.6;
-            /* Apply fade-in on page load */
             animation: fadeIn 0.8s ease-out; 
         }
 
-        header { background: #1e293b; padding: 40px 20px; text-align: center; }
+        /* --- PARTICLES BACKGROUND CSS --- */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; 
+            background-color: #043564; /* Nyan Cat Blue */
+        }
+
+        header { 
+            background: rgba(30, 41, 59, 0.85); 
+            padding: 40px 20px; 
+            text-align: center; 
+        }
         header h1 { margin: 0; font-size: 2.5em; color: #38bdf8; }
         
         nav { margin-top: 15px; }
@@ -34,7 +48,6 @@
             margin: 0 15px; 
             text-decoration: none; 
             font-weight: bold; 
-            /* Smooth transition for links */
             transition: color 0.3s ease, transform 0.2s ease;
             display: inline-block;
         }
@@ -43,18 +56,26 @@
             transform: scale(1.1);
         }
 
-        /* Active page styling */
         .active {
             color: #38bdf8;
         }
 
-        section { padding: 60px 20px; max-width: 900px; margin: auto; }
+        section { padding: 60px 20px; max-width: 900px; margin: auto; position: relative; }
         h2 { color: #38bdf8; border-bottom: 2px solid #334155; padding-bottom: 10px; }
         
         .achievements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
         
-        .card { background: #1e293b; padding: 20px; border-radius: 10px; transition: 0.3s; text-align: center; height: 100%; box-sizing: border-box; }
-        .card:hover { transform: translateY(-5px); background: #334155; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .card { 
+            background: rgba(30, 41, 59, 0.85); /* Semi-transparent cards */
+            padding: 20px; 
+            border-radius: 10px; 
+            transition: 0.3s; 
+            text-align: center; 
+            height: 100%; 
+            box-sizing: border-box; 
+            backdrop-filter: blur(5px); /* Adds a nice frosted glass effect */
+        }
+        .card:hover { transform: translateY(-5px); background: rgba(51, 65, 85, 0.9); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
 
         .cert-img {
             width: 120px;
@@ -83,7 +104,6 @@
             flex-direction: column; 
             justify-content: center;
             align-items: center;
-            /* Modal pops in smoothly */
             animation: fadeIn 0.3s ease-out;
         }
 
@@ -126,6 +146,8 @@
     </style>
 </head>
 <body>
+
+<div id="particles-js"></div>
 
 <header>
     <h1>Nahum Jacob Ilagan</h1>
@@ -173,7 +195,12 @@
 
 <footer><p>© 2026 Nahum Jacob Ilagan. All rights reserved.</p></footer>
 
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
+    particlesJS.load('particles-js', 'particles.json', function() {
+        console.log('Nyan Cat particles loaded on Achievements page!');
+    });
+
     function zoomImage(imgElement, linkedinUrl) {
         var modal = document.getElementById("imageModal");
         var modalImg = document.getElementById("expandedImg");
