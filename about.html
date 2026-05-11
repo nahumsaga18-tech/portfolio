@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Nahum Jacob Ilagan</title>
+    <style>
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        body { margin: 0; font-family: Arial, sans-serif; background: #043564; color: #e2e8f0; line-height: 1.6; overflow-x: hidden; }
+        #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        header { background: rgba(30, 41, 59, 0.9); padding: 15px; text-align: center; backdrop-filter: blur(10px); }
+        header h1 { font-size: 1.2rem; color: #38bdf8; margin: 0; text-transform: none; }
+        nav { margin-top: 10px; }
+        nav a { color: #e2e8f0; margin: 0 10px; text-decoration: none; font-weight: bold; font-size: 0.85rem; transition: 0.3s; }
+        nav a:hover, .active { color: #38bdf8; }
+        section { padding: 40px 20px; max-width: 800px; margin: auto; animation: fadeIn 0.8s ease-out; }
+        .about-text { background: rgba(15, 23, 42, 0.8); padding: 30px; border-radius: 12px; backdrop-filter: blur(8px); border: 1px solid rgba(56, 189, 248, 0.1); text-align: justify; }
+        footer { padding: 20px; }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header>
+        <h1>Nahum Jacob Ilagan</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="techstack.html">Tech Stack</a> 
+            <a href="achievements.html">Achievements</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <section>
+        <div class="about-text">
+            <p>Hello! I'm Nahum Jacob Ilagan, a passionate developer who enjoys creating clean and functional websites that prioritize user experience. I have developed a strong foundation in software development through academic projects involving Java, Python, and Android Studio. My technical interests extend to database systems and SQL management, where I focus on building efficient back-end structures using tools like PostgreSQL. I am particularly drawn to minimalist and clean UI designs, as I believe simplicity is key to effective digital communication. Constantly seeking to grow, I am currently refining my professional workflow by mastering version control with Git and GitHub.</p>
+        </div>
+    </section>
+    <footer></footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 8 },
+                "shape": { "type": "image", "image": { "src": "https://upload.wikimedia.org/wikipedia/en/e/ed/Nyan_cat_250px_frame.PNG", "width": 100, "height": 100 } },
+                "size": { "value": 40, "random": true },
+                "move": { "enable": true, "speed": 4, "direction": "right", "straight": true, "out_mode": "out" }
+            }
+        });
+    </script>
+</body>
+</html>
