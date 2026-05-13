@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certifications | Nahum Jacob Ilagan</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
         @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
@@ -12,14 +13,26 @@
         body { margin: 0; font-family: Arial, sans-serif; background: #043564; color: #e2e8f0; min-height: 100vh; overflow-x: hidden; }
         #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
         
-        /* Navbar styling */
-        header { background: rgba(30, 41, 59, 0.9) !important; backdrop-filter: blur(10px); }
+        /* Updated Navbar styling to fix the missing dark part in image_2c1b35.png */
+        .navbar { 
+            background: rgba(30, 41, 59, 0.9) !important; 
+            backdrop-filter: blur(10px); 
+        }
+
         .navbar-item, .navbar-link { color: #e2e8f0 !important; font-weight: bold; font-size: 0.85rem; }
         
         /* Mobile menu adjustment */
-        .navbar-menu { background: rgba(30, 41, 59, 0.95) !important; }
+        @media screen and (max-width: 1023px) {
+            .navbar-menu { 
+                background: rgba(30, 41, 59, 0.98) !important; 
+                position: absolute !important; 
+                width: 100%; 
+                left: 0;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            }
+        }
+
         .navbar-burger { color: #38bdf8 !important; }
-        
         .navbar-item:hover, .navbar-item.is-active { color: #38bdf8 !important; background: transparent !important; }
         
         /* Custom Card styling */
@@ -38,12 +51,19 @@
         /* Modal Customization */
         .modal-content img { border: 3px solid #38bdf8; border-radius: 10px; }
         .title { color: #38bdf8 !important; }
+
+        /* Footer fix to prevent white gaps */
+        .footer {
+            background-color: transparent !important;
+            padding: 2rem 1.5rem !important;
+        }
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
 
-    <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+    <!-- Removed 'is-transparent' to show the dark top bar -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
                 <span class="navbar-item">
@@ -114,8 +134,9 @@
         <button class="modal-close is-large" aria-label="close" onclick="closeModal()"></button>
     </div>
 
+    <footer class="footer"></footer>
+
     <script>
-        // Navbar Toggle Script
         document.addEventListener('DOMContentLoaded', () => {
             const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
             if ($navbarBurgers.length > 0) {
@@ -130,7 +151,6 @@
             }
         });
 
-        // Modal Functions
         function zoomImage(src, link) { 
             document.getElementById("imageModal").classList.add("is-active"); 
             document.getElementById("expandedImg").src = src; 

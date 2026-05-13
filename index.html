@@ -13,11 +13,24 @@
         body { margin: 0; font-family: Arial, sans-serif; background: #043564; color: #e2e8f0; min-height: 100vh; overflow-x: hidden; }
         #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
         
-        header { background: rgba(30, 41, 59, 0.85) !important; backdrop-filter: blur(10px); border: none; }
+        /* Fixed Navbar Background */
+        .navbar { 
+            background: rgba(30, 41, 59, 0.85) !important; 
+            backdrop-filter: blur(10px); 
+            transition: background 0.3s ease;
+        }
+        
         .navbar-item, .navbar-link { color: #e2e8f0 !important; font-weight: bold; font-size: 0.85rem; }
         
-        /* Mobile adjustment for burger menu appearance */
-        .navbar-menu { background: rgba(30, 41, 59, 0.95) !important; }
+        /* Mobile menu adjustment */
+        @media screen and (max-width: 1023px) {
+            .navbar-menu { 
+                background: rgba(30, 41, 59, 0.95) !important; 
+                position: absolute !important; 
+                width: 100%; 
+                left: 0; 
+            }
+        }
         
         .navbar-item:hover, .navbar-item.is-active { color: #38bdf8 !important; background: transparent !important; }
         
@@ -29,22 +42,20 @@
         }
         .hero-img:hover { transform: scale(1.05); }
         
-        /* Bulma Overrides */
         .title { color: #38bdf8 !important; }
         .subtitle { color: #e2e8f0 !important; }
         
-        /* Custom Button Hover */
         .custom-btn { transition: 0.3s ease; border-color: #38bdf8 !important; color: #38bdf8 !important; }
         .custom-btn:hover { background-color: #38bdf8 !important; color: #043564 !important; }
 
-        /* Burger icon color */
         .navbar-burger { color: #38bdf8 !important; }
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
 
-    <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+    <!-- Removed 'is-transparent' to allow the background color to span full width -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
                 <span class="navbar-item">
@@ -107,7 +118,6 @@
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Navbar Toggle Script
         document.addEventListener('DOMContentLoaded', () => {
             const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
             if ($navbarBurgers.length > 0) {
@@ -122,7 +132,6 @@
             }
         });
 
-        // Particles Script
         particlesJS("particles-js", {
             "particles": {
                 "number": { "value": 10, "density": { "enable": true, "value_area": 800 } },

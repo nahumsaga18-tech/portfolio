@@ -5,20 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Nahum Jacob Ilagan</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
+        .footer {
+    background-color: transparent !important;
+    padding: 0 !important; /* Removes the empty white height */
+}
         @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
         
         body { margin: 0; font-family: Arial, sans-serif; background: #043564; color: #e2e8f0; line-height: 1.6; min-height: 100vh; overflow-x: hidden; }
         #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
         
-        header { background: rgba(30, 41, 59, 0.9) !important; backdrop-filter: blur(10px); }
+        /* Apply background to .navbar for full-width coverage */
+        .navbar { 
+            background: rgba(30, 41, 59, 0.9) !important; 
+            backdrop-filter: blur(10px); 
+        }
+
         .navbar-item, .navbar-link { color: #e2e8f0 !important; font-weight: bold; font-size: 0.85rem; }
         
         /* Mobile menu styling */
-        .navbar-menu { background: rgba(30, 41, 59, 0.95) !important; }
-        .navbar-burger { color: #38bdf8 !important; }
+        @media screen and (max-width: 1023px) {
+            .navbar-menu { 
+                background: rgba(30, 41, 59, 0.98) !important; 
+                position: absolute !important; 
+                width: 100%; 
+                left: 0;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            }
+        }
         
+        .navbar-burger { color: #38bdf8 !important; }
         .navbar-item:hover, .navbar-item.is-active { color: #38bdf8 !important; background: transparent !important; }
         
         section { animation: fadeIn 0.8s ease-out; }
@@ -35,7 +53,8 @@
 <body>
     <div id="particles-js"></div>
 
-    <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+    <!-- Removed is-transparent -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
                 <span class="navbar-item">
