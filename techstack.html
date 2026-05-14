@@ -11,18 +11,21 @@
         body { margin: 0; font-family: Arial, sans-serif; background: #043564; color: #e2e8f0; min-height: 100vh; overflow-x: hidden; }
         #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
         
+        /* Navbar Mobile Optimization */
         .navbar { background: rgba(30, 41, 59, 0.9) !important; backdrop-filter: blur(10px); }
         .navbar-item { color: #e2e8f0 !important; font-weight: bold; font-size: 0.85rem; }
-        @media screen and (max-width: 1023px) { .navbar-menu { background: rgba(30, 41, 59, 0.95) !important; position: absolute !important; width: 100%; left: 0; } }
+        @media screen and (max-width: 1023px) { 
+            .navbar-menu { background: rgba(15, 23, 42, 0.98) !important; padding: 1rem; } 
+            .navbar-item { border-bottom: 1px solid rgba(56, 189, 248, 0.1); padding: 15px; }
+        }
         .navbar-burger { color: #38bdf8 !important; }
         .navbar-item:hover, .navbar-item.is-active { color: #38bdf8 !important; background: transparent !important; }
         
-        section { animation: fadeIn 0.8s ease; }
+        section { animation: fadeIn 0.8s ease; padding: 2rem 1rem; }
         
-        /* Category Title Styling */
         .category-title { color: #38bdf8 !important; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; border-bottom: 1px solid rgba(56, 189, 248, 0.2); display: inline-block; padding-bottom: 5px; }
 
-        /* Individual Tech Card Styling */
+        /* Tech Card - Grid Logic */
         .tech-card { 
             background: rgba(15, 23, 42, 0.8) !important; 
             border: 1px solid rgba(56, 189, 248, 0.1); 
@@ -33,19 +36,25 @@
             flex-direction: column; 
             align-items: center; 
             justify-content: center; 
-            padding: 2rem 1rem;
+            padding: 1.5rem 0.5rem;
             height: 100%;
+            border-radius: 12px;
         }
-        .tech-card:hover { 
-            transform: translateY(-10px); 
-            border-color: #38bdf8; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
+        
+        .tech-icon { color: #38bdf8; font-size: 2.5rem; margin-bottom: 12px; }
+        .tech-card-logo { width: 40px; height: 40px; object-fit: contain; margin-bottom: 12px; }
+        .tech-name { font-weight: bold; font-size: 0.9rem; color: #e2e8f0; text-align: center; }
 
-        /* Logo and Icon Styling */
-        .tech-icon { color: #38bdf8; font-size: 3rem; margin-bottom: 15px; }
-        .tech-card-logo { width: 50px; height: 50px; object-fit: contain; margin-bottom: 15px; }
-        .tech-name { font-weight: bold; font-size: 1rem; color: #e2e8f0; }
+        /* Mobile-Specific Tweaks */
+        @media screen and (max-width: 768px) {
+            .section { padding-top: 1rem; }
+            .tech-icon { font-size: 2rem; }
+            .tech-card-logo { width: 35px; height: 35px; }
+            .tech-name { font-size: 0.8rem; }
+            .category-title { font-size: 1.2rem !important; }
+            /* Force 2 columns on small mobile */
+            .column.is-6-mobile { width: 50%; } 
+        }
 
         .title { color: #38bdf8 !important; }
     </style>
@@ -73,105 +82,102 @@
     </nav>
 
     <section class="section">
-        <div class="container has-text-centered">
+        <div class="container">
             
-            <!-- Languages Section -->
-            <h3 class="is-size-4 category-title">Programming Languages</h3>
-            <div class="columns is-multiline is-centered mb-6">
-                <!-- HTML5 -->
-                <div class="column is-3-desktop is-4-tablet is-6-mobile">
-                    <div class="box tech-card">
-                        <i class="fab fa-html5 tech-icon"></i>
-                        <span class="tech-name">HTML5</span>
+            <div class="has-text-centered mb-6">
+                <h3 class="is-size-4 category-title">Languages</h3>
+                <div class="columns is-mobile is-multiline is-centered">
+                    <!-- HTML5 -->
+                    <div class="column is-4-desktop is-4-tablet is-6-mobile">
+                        <div class="box tech-card">
+                            <i class="fab fa-html5 tech-icon"></i>
+                            <span class="tech-name">HTML5</span>
+                        </div>
                     </div>
-                </div>
-                <!-- CSS3 -->
-                <div class="column is-3-desktop is-4-tablet is-6-mobile">
-                    <div class="box tech-card">
-                        <i class="fab fa-css3-alt tech-icon"></i>
-                        <span class="tech-name">CSS3</span>
+                    <!-- CSS3 -->
+                    <div class="column is-4-desktop is-4-tablet is-6-mobile">
+                        <div class="box tech-card">
+                            <i class="fab fa-css3-alt tech-icon"></i>
+                            <span class="tech-name">CSS3</span>
+                        </div>
                     </div>
-                </div>
-                <!-- JS -->
-                <div class="column is-3-desktop is-4-tablet is-6-mobile">
-                    <div class="box tech-card">
-                        <i class="fab fa-js tech-icon"></i>
-                        <span class="tech-name">JavaScript</span>
+                    <!-- JS -->
+                    <div class="column is-4-desktop is-4-tablet is-6-mobile">
+                        <div class="box tech-card">
+                            <i class="fab fa-js tech-icon"></i>
+                            <span class="tech-name">JavaScript</span>
+                        </div>
                     </div>
-                </div>
-                <!-- Java -->
-                <div class="column is-3-desktop is-4-tablet is-6-mobile">
-                    <div class="box tech-card">
-                        <i class="fab fa-java tech-icon"></i>
-                        <span class="tech-name">Java</span>
+                    <!-- Java -->
+                    <div class="column is-4-desktop is-4-tablet is-6-mobile">
+                        <div class="box tech-card">
+                            <i class="fab fa-java tech-icon"></i>
+                            <span class="tech-name">Java</span>
+                        </div>
                     </div>
-                </div>
-                <!-- Python -->
-                <div class="column is-3-desktop is-4-tablet is-6-mobile">
-                    <div class="box tech-card">
-                        <i class="fab fa-python tech-icon"></i>
-                        <span class="tech-name">Python</span>
+                    <!-- Python -->
+                    <div class="column is-4-desktop is-4-tablet is-6-mobile">
+                        <div class="box tech-card">
+                            <i class="fab fa-python tech-icon"></i>
+                            <span class="tech-name">Python</span>
+                        </div>
                     </div>
-                </div>
-                <!-- C -->
-                <div class="column is-3-desktop is-4-tablet is-6-mobile">
-                    <div class="box tech-card">
-                        <i class="fas fa-file-code tech-icon"></i>
-                        <span class="tech-name">C Language</span>
-                    </div>
-                </div>
-                <!-- PostgreSQL -->
-                <div class="column is-3-desktop is-4-tablet is-6-mobile">
-                    <div class="box tech-card">
-                        <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-vertical.svg" class="tech-card-logo" alt="PostgreSQL">
-                        <span class="tech-name">PostgreSQL</span>
+                    <!-- PostgreSQL -->
+                    <div class="column is-4-desktop is-4-tablet is-6-mobile">
+                        <div class="box tech-card">
+                            <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-vertical.svg" class="tech-card-logo" alt="PostgreSQL">
+                            <span class="tech-name">PostgreSQL</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Tools Section -->
-            <h3 class="is-size-4 category-title">Tools & Environment</h3>
-            <div class="columns is-multiline is-centered">
-                <!-- GitHub -->
-                <div class="column is-3-desktop is-4-tablet is-6-mobile">
-                    <div class="box tech-card">
-                        <i class="fab fa-github tech-icon"></i>
-                        <span class="tech-name">GitHub</span>
+            <div class="has-text-centered">
+                <h3 class="is-size-4 category-title">Tools</h3>
+                <div class="columns is-mobile is-multiline is-centered">
+                    <!-- GitHub -->
+                    <div class="column is-4-desktop is-4-tablet is-6-mobile">
+                        <div class="box tech-card">
+                            <i class="fab fa-github tech-icon"></i>
+                            <span class="tech-name">GitHub</span>
+                        </div>
                     </div>
-                </div>
-                <!-- Android Studio -->
-                <div class="column is-3-desktop is-4-tablet is-6-mobile">
-                    <div class="box tech-card">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" class="tech-card-logo" alt="Android Studio">
-                        <span class="tech-name">Android Studio</span>
+                    <!-- Android Studio -->
+                    <div class="column is-4-desktop is-4-tablet is-6-mobile">
+                        <div class="box tech-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" class="tech-card-logo" alt="Android Studio">
+                            <span class="tech-name">Android Studio</span>
+                        </div>
                     </div>
-                </div>
-                <!-- VS Code -->
-                <div class="column is-3-desktop is-4-tablet is-6-mobile">
-                    <div class="box tech-card">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" class="tech-card-logo" alt="VS Code">
-                        <span class="tech-name">VS Code</span>
+                    <!-- VS Code -->
+                    <div class="column is-4-desktop is-4-tablet is-6-mobile">
+                        <div class="box tech-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" class="tech-card-logo" alt="VS Code">
+                            <span class="tech-name">VS Code</span>
+                        </div>
                     </div>
-                </div>
-                <!-- pgAdmin -->
-                <div class="column is-3-desktop is-4-tablet is-6-mobile">
-                    <div class="box tech-card">
-                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/pgadmin.svg" class="tech-card-logo" alt="pgAdmin">
-                        <span class="tech-name">pgAdmin</span>
+                    <!-- pgAdmin -->
+                    <div class="column is-4-desktop is-4-tablet is-6-mobile">
+                        <div class="box tech-card">
+                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/pgadmin.svg" class="tech-card-logo" alt="pgAdmin">
+                            <span class="tech-name">pgAdmin</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Navigation Buttons -->
-            <div class="buttons is-centered mt-6">
-                <a href="about.html" class="button is-info is-outlined is-small">About</a>
-                <a href="certifications.html" class="button is-info is-outlined is-small">Certifications</a>
-                <a href="contact.html" class="button is-info is-outlined is-small">Contact</a>
+            <!-- Footer Navigation -->
+            <div class="has-text-centered mt-6">
+                <div class="buttons is-centered">
+                    <a href="about.html" class="button is-info is-outlined is-small">About</a>
+                    <a href="certifications.html" class="button is-info is-outlined is-small">Certs</a>
+                    <a href="contact.html" class="button is-info is-outlined is-small">Contact</a>
+                </div>
+                <a href="index.html" class="button is-danger is-outlined is-rounded is-small mt-2">
+                    <span class="icon"><i class="fas fa-home"></i></span>
+                    <span>Home</span>
+                </a>
             </div>
-            <a href="index.html" class="button is-danger is-outlined is-rounded mt-4">
-                <span class="icon"><i class="fas fa-home"></i></span>
-                <span>Exit to Home</span>
-            </a>
         </div>
     </section>
 
@@ -190,7 +196,7 @@
                 });
             }
         });
-        particlesJS("particles-js", { "particles": { "number": { "value": 10 }, "shape": { "type": "image", "image": { "src": "https://upload.wikimedia.org/wikipedia/en/e/ed/Nyan_cat_250px_frame.PNG", "width": 100, "height": 100 } }, "size": { "value": 40, "random": true }, "move": { "enable": true, "speed": 4, "direction": "right", "straight": true, "out_mode": "out" } } });
+        particlesJS("particles-js", { "particles": { "number": { "value": 8 }, "shape": { "type": "image", "image": { "src": "https://upload.wikimedia.org/wikipedia/en/e/ed/Nyan_cat_250px_frame.PNG", "width": 100, "height": 100 } }, "size": { "value": 30, "random": true }, "move": { "enable": true, "speed": 3, "direction": "right", "straight": true, "out_mode": "out" } } });
     </script>
 </body>
 </html>
