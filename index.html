@@ -49,12 +49,17 @@
         .custom-btn:hover { background-color: #38bdf8 !important; color: #043564 !important; }
 
         .navbar-burger { color: #38bdf8 !important; }
+
+        /* Footer fix to remove white gap */
+        .footer {
+            background-color: transparent !important;
+            padding: 0 !important;
+        }
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
 
-    <!-- Removed 'is-transparent' to allow the background color to span full width -->
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
@@ -84,8 +89,9 @@
     <section class="hero is-fullheight-with-navbar">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <img src="images/profile.jpg" alt="Nahum Jacob Ilagan" class="hero-img">
-                <h2 class="title is-2">Web Developer</h2>
+                <!-- Updated Image Source -->
+                <img src="images/profile (2).jpg" alt="Nahum Jacob Ilagan" class="hero-img">
+                <h2 class="title is-2">Aspiring Web Developer</h2>
                 <p class="subtitle is-5 mb-5">
                     Minimalist Designer <span class="has-text-info">|</span> 
                     Software Developer <span class="has-text-info">|</span> 
@@ -114,7 +120,7 @@
         </div>
     </section>
 
-    <footer class="footer has-background-transparent"></footer>
+    <footer class="footer"></footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>

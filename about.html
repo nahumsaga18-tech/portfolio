@@ -8,66 +8,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
-        .footer {
-    background-color: transparent !important;
-    padding: 0 !important; /* Removes the empty white height */
-}
+        .footer { background-color: transparent !important; padding: 0 !important; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-        
         body { margin: 0; font-family: Arial, sans-serif; background: #043564; color: #e2e8f0; line-height: 1.6; min-height: 100vh; overflow-x: hidden; }
         #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-        
-        /* Apply background to .navbar for full-width coverage */
-        .navbar { 
-            background: rgba(30, 41, 59, 0.9) !important; 
-            backdrop-filter: blur(10px); 
-        }
-
+        .navbar { background: rgba(30, 41, 59, 0.9) !important; backdrop-filter: blur(10px); }
         .navbar-item, .navbar-link { color: #e2e8f0 !important; font-weight: bold; font-size: 0.85rem; }
-        
-        /* Mobile menu styling */
-        @media screen and (max-width: 1023px) {
-            .navbar-menu { 
-                background: rgba(30, 41, 59, 0.98) !important; 
-                position: absolute !important; 
-                width: 100%; 
-                left: 0;
-                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            }
-        }
-        
+        @media screen and (max-width: 1023px) { .navbar-menu { background: rgba(30, 41, 59, 0.98) !important; position: absolute !important; width: 100%; left: 0; box-shadow: 0 8px 16px rgba(0,0,0,0.2); } }
         .navbar-burger { color: #38bdf8 !important; }
         .navbar-item:hover, .navbar-item.is-active { color: #38bdf8 !important; background: transparent !important; }
-        
         section { animation: fadeIn 0.8s ease-out; }
-        
-        .custom-box { 
-            background: rgba(15, 23, 42, 0.8) !important; 
-            border: 1px solid rgba(56, 189, 248, 0.1); 
-            backdrop-filter: blur(8px);
-            color: #e2e8f0 !important;
-        }
+        .custom-box { background: rgba(15, 23, 42, 0.8) !important; border: 1px solid rgba(56, 189, 248, 0.1); backdrop-filter: blur(8px); color: #e2e8f0 !important; }
         .title { color: #38bdf8 !important; }
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
-
-    <!-- Removed is-transparent -->
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
-                <span class="navbar-item">
-                    <h1 class="title is-5">Nahum Jacob Ilagan</h1>
-                </span>
+                <span class="navbar-item"><h1 class="title is-5">Nahum Jacob Ilagan</h1></span>
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
                 </a>
             </div>
-
             <div id="navMenu" class="navbar-menu has-text-centered">
                 <div class="navbar-end">
                     <a href="index.html" class="navbar-item">Home</a>
@@ -84,11 +48,27 @@
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-three-quarters-desktop is-full-mobile">
-                    <div class="box custom-box">
+                    <div class="box custom-box has-text-centered">
                         <h2 class="title is-3 mb-5">About Me</h2>
                         <div class="content is-medium has-text-justified">
-                            <p>Hello! I'm Nahum Jacob Ilagan, a passionate developer who enjoys creating clean and functional websites that prioritize user experience. I have developed a strong foundation in software development through academic projects involving Java, Python, and Android Studio. My technical interests extend to database systems and SQL management, where I focus on building efficient back-end structures using tools like PostgreSQL. I am particularly drawn to minimalist and clean UI designs, as I believe simplicity is key to effective digital communication. Constantly seeking to grow, I am currently refining my professional workflow by mastering version control with Git and GitHub.</p>
+                            <p>
+                                Hello! I'm Nahum Jacob Ilagan, a passionate developer dedicated to creating clean and functional websites that prioritize user experience. I have built a solid foundation in software development through various academic projects utilizing Java, Python, and Android Studio. My technical expertise also covers database systems and SQL management, where I focus on developing efficient back-end structures with tools like PostgreSQL.
+                            </p>
+                            <p>
+                                I am particularly drawn to minimalist and clean UI designs, as I believe simplicity is essential for effective digital communication. To ensure I am always improving, I am currently refining my professional workflow by mastering version control with Git and GitHub. I look forward to applying these skills to create impactful and user-centric digital solutions.
+                            </p>
                         </div>
+
+                        <hr style="background-color: rgba(56, 189, 248, 0.2);">
+                        <div class="buttons is-centered">
+                            <a href="techstack.html" class="button is-info is-outlined is-small">Tech Stack</a>
+                            <a href="certifications.html" class="button is-info is-outlined is-small">Certifications</a>
+                            <a href="contact.html" class="button is-info is-outlined is-small">Contact</a>
+                        </div>
+                        <a href="index.html" class="button is-danger is-outlined is-rounded mt-4">
+                            <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                            <span>Exit to Home</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -96,7 +76,7 @@
     </section>
 
     <footer class="footer has-background-transparent"></footer>
-
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -111,18 +91,7 @@
                 });
             }
         });
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 8 },
-                "shape": { "type": "image", "image": { "src": "https://upload.wikimedia.org/wikipedia/en/e/ed/Nyan_cat_250px_frame.PNG", "width": 100, "height": 100 } },
-                "size": { "value": 40, "random": true },
-                "move": { "enable": true, "speed": 4, "direction": "right", "straight": true, "out_mode": "out" }
-            }
-        });
+        particlesJS("particles-js", { "particles": { "number": { "value": 8 }, "shape": { "type": "image", "image": { "src": "https://upload.wikimedia.org/wikipedia/en/e/ed/Nyan_cat_250px_frame.PNG", "width": 100, "height": 100 } }, "size": { "value": 40, "random": true }, "move": { "enable": true, "speed": 4, "direction": "right", "straight": true, "out_mode": "out" } } });
     </script>
 </body>
 </html>
