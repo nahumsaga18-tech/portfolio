@@ -89,9 +89,14 @@
     <section class="hero is-fullheight-with-navbar">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <!-- Updated Image Source -->
+                <!-- Profile Image -->
                 <img src="images/profile (2).jpg" alt="Nahum Jacob Ilagan" class="hero-img">
+                
+                <!-- Personal Greeting -->
+                <p class="is-size-4 has-text-weight-light mb-2" style="color: #e2e8f0; opacity: 0.9;">Hi, I'm Nahum Jacob Ilagan</p>
+                
                 <h2 class="title is-2">Aspiring Web Developer</h2>
+                
                 <p class="subtitle is-5 mb-5">
                     Minimalist Designer <span class="has-text-info">|</span> 
                     Software Developer <span class="has-text-info">|</span> 
@@ -125,6 +130,7 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Navbar Burger Logic
             const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
             if ($navbarBurgers.length > 0) {
                 $navbarBurgers.forEach( el => {
@@ -138,6 +144,7 @@
             }
         });
 
+        // Particles Configuration
         particlesJS("particles-js", {
             "particles": {
                 "number": { "value": 10, "density": { "enable": true, "value_area": 800 } },
