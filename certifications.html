@@ -3,45 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Stack | Nahum Jacob Ilagan</title>
+    <title>Certifications | Nahum Jacob Ilagan</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
     <style>
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        
         body { margin: 0; font-family: Arial, sans-serif; background: #043564; color: #e2e8f0; min-height: 100vh; overflow-x: hidden; }
         #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-        .navbar { background: rgba(30, 41, 59, 0.9) !important; backdrop-filter: blur(10px); }
-        .navbar-item { color: #e2e8f0 !important; font-weight: bold; font-size: 0.85rem; }
-        @media screen and (max-width: 1023px) { .navbar-menu { background: rgba(30, 41, 59, 0.95) !important; position: absolute !important; width: 100%; left: 0; } }
+        
+        .navbar { 
+            background: rgba(30, 41, 59, 0.9) !important; 
+            backdrop-filter: blur(10px); 
+        }
+
+        .navbar-item, .navbar-link { color: #e2e8f0 !important; font-weight: bold; font-size: 0.85rem; }
+        
+        @media screen and (max-width: 1023px) {
+            .navbar-menu { 
+                background: rgba(30, 41, 59, 0.98) !important; 
+                position: absolute !important; 
+                width: 100%; 
+                left: 0;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            }
+        }
+
         .navbar-burger { color: #38bdf8 !important; }
         .navbar-item:hover, .navbar-item.is-active { color: #38bdf8 !important; background: transparent !important; }
-        section { animation: fadeIn 0.8s ease; }
-        .tech-box { background: rgba(15, 23, 42, 0.8) !important; border: 1px solid rgba(56, 189, 248, 0.2); backdrop-filter: blur(8px); color: #e2e8f0 !important; transition: transform 0.3s ease; height: 100%; }
-        .tech-box:hover { transform: translateY(-5px); }
-        .tech-title { color: #38bdf8 !important; font-weight: bold; border-bottom: 2px solid rgba(56, 189, 248, 0.2); padding-bottom: 10px; margin-bottom: 20px; }
         
-        .icon { color: #38bdf8; margin-right: 12px; display: flex; align-items: center; justify-content: center; }
-        .tech-logo { width: 24px; height: 24px; object-fit: contain; }
+        .custom-card { 
+            background: rgba(15, 23, 42, 0.8) !important; 
+            border: 1px solid rgba(56, 189, 248, 0.1); 
+            border-radius: 12px;
+            transition: 0.3s;
+            cursor: pointer;
+            animation: fadeIn 0.6s ease;
+        }
+        .custom-card:hover { transform: translateY(-5px); border-color: #38bdf8; }
+        .cert-img { width: 120px; height: 120px; background: white; padding: 8px; border-radius: 8px; margin: 0 auto; display: block; }
+        .card-title { color: #38bdf8 !important; margin-top: 15px; font-weight: bold; }
         
+        .modal-content img { border: 3px solid #38bdf8; border-radius: 10px; }
         .title { color: #38bdf8 !important; }
+
+        .footer {
+            background-color: transparent !important;
+            padding: 2rem 1.5rem !important;
+        }
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
+
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
-                <span class="navbar-item"><h1 class="title is-5">Nahum Jacob Ilagan</h1></span>
+                <span class="navbar-item">
+                    <h1 class="title is-5">Nahum Jacob Ilagan</h1>
+                </span>
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
-                    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
                 </a>
             </div>
+            
             <div id="navMenu" class="navbar-menu has-text-centered">
                 <div class="navbar-end">
                     <a href="index.html" class="navbar-item">Home</a>
                     <a href="about.html" class="navbar-item">About</a>
-                    <a href="techstack.html" class="navbar-item is-active">Tech Stack</a>
-                    <a href="certifications.html" class="navbar-item">Certifications</a>
+                    <a href="techstack.html" class="navbar-item">Tech Stack</a>
+                    <a href="certifications.html" class="navbar-item is-active">Certifications</a>
                     <a href="contact.html" class="navbar-item">Contact</a>
                 </div>
             </div>
@@ -49,73 +84,68 @@
     </nav>
 
     <section class="section">
-        <div class="container has-text-centered">
-            <div class="columns is-centered">
-                <div class="column is-10-desktop">
-                    <div class="columns is-multiline">
-                        <!-- Languages Column -->
-                        <div class="column is-6">
-                            <div class="box tech-box">
-                                <h3 class="is-size-4 tech-title">Languages</h3>
-                                <div class="content">
-                                    <div class="is-flex is-align-items-center mb-3"><span class="icon is-medium"><i class="fab fa-html5 fa-lg"></i></span><span>HTML5</span></div>
-                                    <div class="is-flex is-align-items-center mb-3"><span class="icon is-medium"><i class="fab fa-css3-alt fa-lg"></i></span><span>CSS3</span></div>
-                                    <div class="is-flex is-align-items-center mb-3"><span class="icon is-medium"><i class="fab fa-js fa-lg"></i></span><span>JavaScript</span></div>
-                                    <div class="is-flex is-align-items-center mb-3"><span class="icon is-medium"><i class="fab fa-java fa-lg"></i></span><span>Java</span></div>
-                                    <div class="is-flex is-align-items-center mb-3"><span class="icon is-medium"><i class="fab fa-python fa-lg"></i></span><span>Python</span></div>
-                                    <div class="is-flex is-align-items-center mb-3"><span class="icon is-medium"><i class="fas fa-file-code fa-lg"></i></span><span>C</span></div>
-                                    <div class="is-flex is-align-items-center">
-                                        <span class="icon is-medium">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="tech-logo" alt="PostgreSQL">
-                                        </span>
-                                        <span>PostgreSQL</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Tools Column -->
-                        <div class="column is-6">
-                            <div class="box tech-box">
-                                <h3 class="is-size-4 tech-title">Tools</h3>
-                                <div class="content">
-                                    <div class="is-flex is-align-items-center mb-3"><span class="icon is-medium"><i class="fab fa-github fa-lg"></i></span><span>GitHub</span></div>
-                                    <div class="is-flex is-align-items-center mb-3">
-                                        <span class="icon is-medium">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" class="tech-logo" alt="Android Studio">
-                                        </span>
-                                        <span>Android Studio</span>
-                                    </div>
-                                    <div class="is-flex is-align-items-center mb-3">
-                                        <span class="icon is-medium">
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" class="tech-logo" alt="VS Code">
-                                        </span>
-                                        <span>VS Code</span>
-                                    </div>
-                                    <div class="is-flex is-align-items-center">
-                                        <span class="icon is-medium">
-                                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/pgadmin.svg" class="tech-logo" alt="pgAdmin">
-                                        </span>
-                                        <span>pgAdmin</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="container">
+            <h2 class="title is-2 has-text-centered mb-6">Certifications</h2>
+            <div class="columns is-multiline is-centered">
+                
+                <div class="column is-one-quarter-desktop is-half-tablet">
+                    <div class="box custom-card" onclick="zoomImage('images/java_badge.png', 'https://www.linkedin.com/in/nahum-jacob-ilagan-8885aa409/')">
+                        <img src="images/java_badge.png" class="cert-img" alt="Java">
+                        <h3 class="has-text-centered card-title">IT Java Specialist</h3>
                     </div>
-                    
-                    <div class="buttons is-centered mt-5">
-                        <a href="about.html" class="button is-info is-outlined is-small">About</a>
-                        <a href="certifications.html" class="button is-info is-outlined is-small">Certifications</a>
-                        <a href="contact.html" class="button is-info is-outlined is-small">Contact</a>
-                    </div>
-                    <a href="index.html" class="button is-danger is-outlined is-rounded mt-4">
-                        <span class="icon"><i class="fas fa-home"></i></span>
-                        <span>Exit to Home</span>
-                    </a>
                 </div>
+               
+                <div class="column is-one-quarter-desktop is-half-tablet">
+                    <div class="box custom-card" onclick="zoomImage('images/networking.png', 'https://www.linkedin.com/in/nahum-jacob-ilagan-8885aa409/')">
+                        <img src="images/networking.png" class="cert-img" alt="Networking">
+                        <h3 class="has-text-centered card-title">Cisco Networking Basics</h3>
+                    </div>
+                </div>
+                
+                <div class="column is-one-quarter-desktop is-half-tablet">
+                    <div class="box custom-card" onclick="zoomImage('images/powerpoint.jpg', 'https://www.linkedin.com/in/nahum-jacob-ilagan-8885aa409/')">
+                        <img src="images/powerpoint.jpg" class="cert-img" alt="PowerPoint">
+                        <h3 class="has-text-centered card-title">Microsoft PowerPoint Associate</h3>
+                    </div>
+                </div>
+                
+                <div class="column is-one-quarter-desktop is-half-tablet">
+                    <div class="box custom-card" onclick="zoomImage('images/python.png', 'https://www.linkedin.com/in/nahum-jacob-ilagan-8885aa409/')">
+                        <img src="images/python.png" class="cert-img" alt="Python">
+                        <h3 class="has-text-centered card-title">Python Essentials 1</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="has-text-centered mt-6">
+                <div class="buttons is-centered mb-4">
+                    <a href="about.html" class="button is-info is-outlined is-small">About</a>
+                    <a href="techstack.html" class="button is-info is-outlined is-small">Tech Stack</a>
+                    <a href="contact.html" class="button is-info is-outlined is-small">Contact</a>
+                </div>
+                <a href="index.html" class="button is-danger is-outlined is-rounded">
+                    <span class="icon"><i class="fas fa-times"></i></span>
+                    <span>Exit to Home</span>
+                </a>
             </div>
         </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <div id="imageModal" class="modal">
+        <div class="modal-background" onclick="closeModal()"></div>
+        <div class="modal-content has-text-centered">
+            <p class="image">
+                <img id="expandedImg" src="" alt="Certificate">
+            </p>
+            <div class="mt-4">
+                <a href="#" id="modalLinkedInLink" target="_blank" class="button is-info is-rounded has-text-weight-bold">Verify Certificate</a>
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" onclick="closeModal()"></button>
+    </div>
+
+    <footer class="footer"></footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -130,6 +160,19 @@
                 });
             }
         });
+
+        function zoomImage(src, link) { 
+            document.getElementById("imageModal").classList.add("is-active"); 
+            document.getElementById("expandedImg").src = src; 
+            document.getElementById("modalLinkedInLink").href = link; 
+        }
+        function closeModal() { 
+            document.getElementById("imageModal").classList.remove("is-active"); 
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
         particlesJS("particles-js", { "particles": { "number": { "value": 10 }, "shape": { "type": "image", "image": { "src": "https://upload.wikimedia.org/wikipedia/en/e/ed/Nyan_cat_250px_frame.PNG", "width": 100, "height": 100 } }, "size": { "value": 40, "random": true }, "move": { "enable": true, "speed": 4, "direction": "right", "straight": true, "out_mode": "out" } } });
     </script>
 </body>
