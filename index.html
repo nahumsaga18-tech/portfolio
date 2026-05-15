@@ -13,7 +13,7 @@
         body { margin: 0; font-family: Arial, sans-serif; background: #043564; color: #e2e8f0; min-height: 100vh; overflow-x: hidden; }
         #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
         
-        /* Fixed Navbar Background */
+      
         .navbar { 
             background: rgba(30, 41, 59, 0.85) !important; 
             backdrop-filter: blur(10px); 
@@ -22,7 +22,7 @@
         
         .navbar-item, .navbar-link { color: #e2e8f0 !important; font-weight: bold; font-size: 0.85rem; }
         
-        /* Mobile menu adjustment */
+
         @media screen and (max-width: 1023px) {
             .navbar-menu { 
                 background: rgba(30, 41, 59, 0.95) !important; 
@@ -50,7 +50,7 @@
 
         .navbar-burger { color: #38bdf8 !important; }
 
-        /* Footer fix to remove white gap */
+     
         .footer {
             background-color: transparent !important;
             padding: 0 !important;
@@ -89,10 +89,10 @@
     <section class="hero is-fullheight-with-navbar">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <!-- Profile Image -->
+            
                 <img src="images/profile (2).jpg" alt="Nahum Jacob Ilagan" class="hero-img">
                 
-                <!-- Personal Greeting -->
+               
                 <p class="is-size-4 has-text-weight-light mb-2" style="color: #e2e8f0; opacity: 0.9;">Hi, I'm Nahum Jacob Ilagan</p>
                 
                 <h2 class="title is-2">Aspiring Web Developer</h2>
@@ -130,7 +130,7 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Navbar Burger Logic
+            
             const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
             if ($navbarBurgers.length > 0) {
                 $navbarBurgers.forEach( el => {
@@ -144,7 +144,7 @@
             }
         });
 
-        // Particles Configuration
+       
         particlesJS("particles-js", {
             "particles": {
                 "number": { "value": 10, "density": { "enable": true, "value_area": 800 } },
