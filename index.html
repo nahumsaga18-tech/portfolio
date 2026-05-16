@@ -1,70 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-navbar-fixed-top">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Nahum Jacob Ilagan</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
-    <style>
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        
-        body { margin: 0; font-family: Arial, sans-serif; background: #043564; color: #e2e8f0; min-height: 100vh; overflow-x: hidden; }
-        #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-        
-      
-        .navbar { 
-            background: rgba(30, 41, 59, 0.85) !important; 
-            backdrop-filter: blur(10px); 
-            transition: background 0.3s ease;
-        }
-        
-        .navbar-item, .navbar-link { color: #e2e8f0 !important; font-weight: bold; font-size: 0.85rem; }
-        
-
-        @media screen and (max-width: 1023px) {
-            .navbar-menu { 
-                background: rgba(30, 41, 59, 0.95) !important; 
-                position: absolute !important; 
-                width: 100%; 
-                left: 0; 
-            }
-        }
-        
-        .navbar-item:hover, .navbar-item.is-active { color: #38bdf8 !important; background: transparent !important; }
-        
-        .hero { background: transparent !important; animation: fadeIn 1s ease-out; }
-        .hero-img { 
-            width: 300px; height: 300px; border-radius: 50%; 
-            border: 6px solid #38bdf8; object-fit: cover; 
-            transition: 0.3s; margin-bottom: 25px;
-        }
-        .hero-img:hover { transform: scale(1.05); }
-        
-        .title { color: #38bdf8 !important; }
-        .subtitle { color: #e2e8f0 !important; }
-        
-        .custom-btn { transition: 0.3s ease; border-color: #38bdf8 !important; color: #38bdf8 !important; }
-        .custom-btn:hover { background-color: #38bdf8 !important; color: #043564 !important; }
-
-        .navbar-burger { color: #38bdf8 !important; }
-
-     
-        .footer {
-            background-color: transparent !important;
-            padding: 0 !important;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="particles-js"></div>
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
                 <span class="navbar-item">
-                    <h1 class="title is-5">Nahum Jacob Ilagan</h1>
+                    <h1 class="title is-5 name-highlight">Nahum Jacob Ilagan</h1>
                 </span>
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
                     <span aria-hidden="true"></span>
@@ -89,38 +40,16 @@
     <section class="hero is-fullheight-with-navbar">
         <div class="hero-body">
             <div class="container has-text-centered">
-            
                 <img src="images/profile (2).jpg" alt="Nahum Jacob Ilagan" class="hero-img">
                 
-               
-                <p class="is-size-4 has-text-weight-light mb-2" style="color: #e2e8f0; opacity: 0.9;">Hi, I'm Nahum Jacob Ilagan</p>
+                <h1 class="title is-1 name-highlight mb-3">Nahum Jacob Ilagan</h1>
+                <h2 class="subtitle is-3 has-text-weight-light mb-5">Aspiring UI/UX Designer</h2>
                 
-                <h2 class="title is-2">Aspiring Web Developer</h2>
-                
-                <p class="subtitle is-5 mb-5">
+                <p class="subtitle is-5 role-sub-details">
                     Minimalist Designer <span class="has-text-info">|</span> 
-                    Software Developer <span class="has-text-info">|</span> 
-                    Student
+                    IT Student <span class="has-text-info">|</span> 
+                    Frontend Enthusiast
                 </p>
-
-                <div class="buttons is-centered mt-6">
-                    <a href="about.html" class="button is-outlined custom-btn is-rounded">
-                        <span class="icon"><i class="fas fa-user"></i></span>
-                        <span>About</span>
-                    </a>
-                    <a href="techstack.html" class="button is-outlined custom-btn is-rounded">
-                        <span class="icon"><i class="fas fa-code"></i></span>
-                        <span>Tech Stack</span>
-                    </a>
-                    <a href="certifications.html" class="button is-outlined custom-btn is-rounded">
-                        <span class="icon"><i class="fas fa-certificate"></i></span>
-                        <span>Certifications</span>
-                    </a>
-                    <a href="contact.html" class="button is-outlined custom-btn is-rounded">
-                        <span class="icon"><i class="fas fa-envelope"></i></span>
-                        <span>Contact</span>
-                    </a>
-                </div>
             </div>
         </div>
     </section>
@@ -128,35 +57,6 @@
     <footer class="footer"></footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-            if ($navbarBurgers.length > 0) {
-                $navbarBurgers.forEach( el => {
-                    el.addEventListener('click', () => {
-                        const target = el.dataset.target;
-                        const $target = document.getElementById(target);
-                        el.classList.toggle('is-active');
-                        $target.classList.toggle('is-active');
-                    });
-                });
-            }
-        });
-
-       
-        particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 10, "density": { "enable": true, "value_area": 800 } },
-                "shape": { "type": "image", "image": { "src": "https://upload.wikimedia.org/wikipedia/en/e/ed/Nyan_cat_250px_frame.PNG", "width": 100, "height": 100 } },
-                "opacity": { "value": 1 },
-                "size": { "value": 40, "random": true },
-                "line_linked": { "enable": false },
-                "move": { "enable": true, "speed": 4, "direction": "right", "random": false, "straight": true, "out_mode": "out" }
-            },
-            "interactivity": { "events": { "onhover": { "enable": false } } },
-            "retina_detect": true
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

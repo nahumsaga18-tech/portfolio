@@ -1,70 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-navbar-fixed-top">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Stack | Nahum Jacob Ilagan</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        body { margin: 0; font-family: Arial, sans-serif; background: #043564; color: #e2e8f0; min-height: 100vh; overflow-x: hidden; }
-        #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-        
-       
-        .navbar { background: rgba(30, 41, 59, 0.9) !important; backdrop-filter: blur(10px); }
-        .navbar-item { color: #e2e8f0 !important; font-weight: bold; font-size: 0.85rem; }
-        @media screen and (max-width: 1023px) { 
-            .navbar-menu { background: rgba(15, 23, 42, 0.98) !important; padding: 1rem; } 
-            .navbar-item { border-bottom: 1px solid rgba(56, 189, 248, 0.1); padding: 15px; }
-        }
-        .navbar-burger { color: #38bdf8 !important; }
-        .navbar-item:hover, .navbar-item.is-active { color: #38bdf8 !important; background: transparent !important; }
-        
-        section { animation: fadeIn 0.8s ease; padding: 2rem 1rem; }
-        
-        .category-title { color: #38bdf8 !important; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; border-bottom: 1px solid rgba(56, 189, 248, 0.2); display: inline-block; padding-bottom: 5px; }
-
-        
-        .tech-card { 
-            background: rgba(15, 23, 42, 0.8) !important; 
-            border: 1px solid rgba(56, 189, 248, 0.1); 
-            backdrop-filter: blur(8px); 
-            color: #e2e8f0 !important; 
-            transition: all 0.3s ease; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            padding: 1.5rem 0.5rem;
-            height: 100%;
-            border-radius: 12px;
-        }
-        
-        .tech-icon { color: #38bdf8; font-size: 2.5rem; margin-bottom: 12px; }
-        .tech-card-logo { width: 40px; height: 40px; object-fit: contain; margin-bottom: 12px; }
-        .tech-name { font-weight: bold; font-size: 0.9rem; color: #e2e8f0; text-align: center; }
-
-     
-        @media screen and (max-width: 768px) {
-            .section { padding-top: 1rem; }
-            .tech-icon { font-size: 2rem; }
-            .tech-card-logo { width: 35px; height: 35px; }
-            .tech-name { font-size: 0.8rem; }
-            .category-title { font-size: 1.2rem !important; }
-            
-            .column.is-6-mobile { width: 50%; } 
-        }
-
-        .title { color: #38bdf8 !important; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="particles-js"></div>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
-                <span class="navbar-item"><h1 class="title is-5">Nahum Jacob Ilagan</h1></span>
+                <span class="navbar-item"><h1 class="title is-5 name-highlight">Nahum Jacob Ilagan</h1></span>
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
                     <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
                 </a>
@@ -83,80 +33,63 @@
 
     <section class="section">
         <div class="container">
-            
             <div class="has-text-centered mb-6">
-                <h3 class="is-size-4 category-title">Languages</h3>
+                <h3 class="is-size-4 category-title mb-4">Languages</h3>
                 <div class="columns is-mobile is-multiline is-centered">
-              
                     <div class="column is-4-desktop is-4-tablet is-6-mobile">
                         <div class="box tech-card">
-                            <i class="fab fa-html5 tech-icon"></i>
-                            <span class="tech-name">HTML5</span>
+                            <i class="fab fa-html5 tech-icon"></i><span class="tech-name">HTML5</span>
                         </div>
                     </div>
-                  
                     <div class="column is-4-desktop is-4-tablet is-6-mobile">
                         <div class="box tech-card">
-                            <i class="fab fa-css3-alt tech-icon"></i>
-                            <span class="tech-name">CSS3</span>
+                            <i class="fab fa-css3-alt tech-icon"></i><span class="tech-name">CSS3</span>
                         </div>
                     </div>
-                   
                     <div class="column is-4-desktop is-4-tablet is-6-mobile">
                         <div class="box tech-card">
-                            <i class="fab fa-js tech-icon"></i>
-                            <span class="tech-name">JavaScript</span>
+                            <i class="fab fa-js tech-icon"></i><span class="tech-name">JavaScript</span>
                         </div>
                     </div>
-                  
                     <div class="column is-4-desktop is-4-tablet is-6-mobile">
                         <div class="box tech-card">
-                            <i class="fab fa-java tech-icon"></i>
-                            <span class="tech-name">Java</span>
+                            <i class="fab fa-java tech-icon"></i><span class="tech-name">Java</span>
                         </div>
                     </div>
-                    
                     <div class="column is-4-desktop is-4-tablet is-6-mobile">
                         <div class="box tech-card">
-                            <i class="fab fa-python tech-icon"></i>
-                            <span class="tech-name">Python</span>
+                            <i class="fab fa-python tech-icon"></i><span class="tech-name">Python</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="has-text-centered">
-                <h3 class="is-size-4 category-title">Tools</h3>
+                <h3 class="is-size-4 category-title mb-4">Tools</h3>
                 <div class="columns is-mobile is-multiline is-centered">
-                  
                     <div class="column is-4-desktop is-4-tablet is-6-mobile">
                         <div class="box tech-card">
-                            <i class="fab fa-github tech-icon"></i>
-                            <span class="tech-name">GitHub</span>
+                            <i class="fab fa-github tech-icon"></i><span class="tech-name">GitHub</span>
                         </div>
                     </div>
-                   
                     <div class="column is-4-desktop is-4-tablet is-6-mobile">
                         <div class="box tech-card">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Android_Studio_icon_%282023%29.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" class="tech-card-logo" alt="Android Studio">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Android_Studio_icon_%282023%29.svg" class="tech-card-logo" alt="Android Studio">
                             <span class="tech-name">Android Studio</span>
                         </div>
                     </div>
-                 
                     <div class="column is-4-desktop is-4-tablet is-6-mobile">
                         <div class="box tech-card">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" class="tech-card-logo" alt="VS Code">
                             <span class="tech-name">VS Code</span>
                         </div>
                     </div>
-                  
                     <div class="column is-4-desktop is-4-tablet is-6-mobile">
                         <div class="box tech-card">
-                            <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-vertical.svg" class="tech-card-logo" alt="PostgreSQL">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" class="tech-card-logo" alt="PostgreSQL">
                             <span class="tech-name">PostgreSQL</span>
                         </div>
                     </div>
-
                     <div class="column is-4-desktop is-4-tablet is-6-mobile">
                         <div class="box tech-card">
                             <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/pgadmin.svg" class="tech-card-logo" alt="pgAdmin">
@@ -165,38 +98,12 @@
                     </div>
                 </div>
             </div>
-
-            
-            <div class="has-text-centered mt-6">
-                <div class="buttons is-centered">
-                    <a href="about.html" class="button is-info is-outlined is-small">About</a>
-                    <a href="certifications.html" class="button is-info is-outlined is-small">Certifications</a>
-                    <a href="contact.html" class="button is-info is-outlined is-small">Contact</a>
-                </div>
-                <a href="index.html" class="button is-danger is-outlined is-rounded is-small mt-2">
-                    <span class="icon"><i class="fas fa-home"></i></span>
-                    <span>Home</span>
-                </a>
-            </div>
         </div>
     </section>
 
+    <footer class="footer"></footer>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-            if ($navbarBurgers.length > 0) {
-                $navbarBurgers.forEach( el => {
-                    el.addEventListener('click', () => {
-                        const target = el.dataset.target;
-                        const $target = document.getElementById(target);
-                        el.classList.toggle('is-active');
-                        $target.classList.toggle('is-active');
-                    });
-                });
-            }
-        });
-        particlesJS("particles-js", { "particles": { "number": { "value": 8 }, "shape": { "type": "image", "image": { "src": "https://upload.wikimedia.org/wikipedia/en/e/ed/Nyan_cat_250px_frame.PNG", "width": 100, "height": 100 } }, "size": { "value": 30, "random": true }, "move": { "enable": true, "speed": 3, "direction": "right", "straight": true, "out_mode": "out" } } });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
