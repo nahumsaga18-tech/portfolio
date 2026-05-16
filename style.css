@@ -76,13 +76,15 @@ section {
 .hero { 
     background: transparent !important; 
     animation: fadeIn 1s ease-out; 
-    position: relative;
-    z-index: 2;
+    position: relative !important;
+    z-index: 2 !important;
 }
 
-.hero .container {
-    position: relative;
-    z-index: 3;
+.hero .container,
+.hero .columns,
+.hero .column {
+    position: relative !important;
+    z-index: 3 !important;
 }
 
 .hero-img { 
@@ -93,8 +95,8 @@ section {
     object-fit: cover; 
     transition: 0.3s; 
     margin-bottom: 25px;
-    position: relative;
-    z-index: 3;
+    position: relative !important;
+    z-index: 4 !important;
 }
 
 .hero-img:hover { 
